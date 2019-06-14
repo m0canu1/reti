@@ -14,19 +14,18 @@
   - 4.3 Cosa c'è dentro ad un router.
 
 #### Programma della Seconda Parte
-- Argomento 5 - 
+- Argomento 5
   - Capitolo 4
-  - Il Livello Rete (Capitolo 4 del libro di testo) ma solo 4.4 IP Internet Protocol, IP e approfondimento dell'indirizzamento 802.11 (che sul Kurose fa parte del
-Capitolo 3)
+  >- Il Livello Rete (Capitolo 4 del libro di testo) ma solo 4.4 IP Internet Protocol
+  - IP e approfondimento dell'indirizzamento 802.11 (che sul Kurose fa parte del Capitolo 3)
   - 4.5 Algoritmi di instradamento
   - 4.6 Instradamento in Internet
-  - 4.7 Instradamento
-broadcast e multicast.
+  - 4.7 Instradamento broadcast e multicast.
 - Argomento 6 
-  - Il livello trasporto (Capitolo 3 del libro di testo)
+  >- Il livello trasporto (Capitolo 3 del libro di testo)
 - Argomento 7 
-  - Il livello Applicazioni (Capitolo 2 libro di testo, eccetto sezione 2.6.2)
+  >- Il livello Applicazioni (Capitolo 2 libro di testo, eccetto sezione 2.6.2)
 - Argomento 8 
-  - Come creare un'applicazione di rete (i socket)
+  >- Come creare un'applicazione di rete (i socket)
 - Argomento 9 
   - Gestione della rete (cap. 9 del libro di testo, VI edizione). 
