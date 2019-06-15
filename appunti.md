@@ -12,6 +12,7 @@ Perché:
 - nelle reti fisiche gli indirizzi sono di diverso tipo
 - alcune reti fisiche non hanno indirizzi universali
 
+
 >**Un indirizzo deve individuare univocamente una macchina.**
 Una macchina può avere **più di un indirizzo IP**, purché questi siano univoci.
 
