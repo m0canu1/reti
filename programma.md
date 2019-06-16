@@ -16,7 +16,6 @@
 #### Programma della Seconda Parte
 - Argomento 5
   - Capitolo 4
-  
   > Il Livello Rete (Capitolo 4 del libro di testo) ma solo 4.4 IP Internet Protocol
   - IP e approfondimento dell'indirizzamento 802.11 (che sul Kurose fa parte del Capitolo 3)
   - 4.5 Algoritmi di instradamento
