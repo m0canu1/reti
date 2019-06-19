@@ -1,24 +1,24 @@
-###FTP (File Transfer Protocol)
+### FTP (File Transfer Protocol)
 
->- Trasferimento file da/verso host remoto
->- Modello client/server
->   - Client: chi inizia la richiesta di trasferimento (da/verso host remoto)
->   - Server: remote host
+- Trasferimento file da/verso host remoto
+- Modello client/server
+   - Client: chi inizia la richiesta di trasferimento (da/verso host remoto)
+   - Server: remote host
 
 Utilizza **due connessioni TCP parallele**:
 1. **Control connection**: invio di informazioni di controllo (username, password, comandi change directory, comandi trasferimento file). Invio informazioni in FTP *out-of-band* (HTTP *in-band*, nell'header).
 2. **Data connection**: usata per il vero e proprio invio dei file.
    
-> **Control connection** è persistente, la **Data connection** si apre e si chiude ad ogni inizio e fine del trasferimento di un file.
+ **Control connection** è persistente, la **Data connection** si apre e si chiude ad ogni inizio e fine del trasferimento di un file.
 
 ---
 
 **DNS** (Domain Name System)
-> E' un servizio che **traduce** i nomi degli host nei loro indirizzi IP usando un **Database distribuito**. E' *distribuito* perche':
-> - unico punto di fallimento
-> - alto volume di traffico
-> - database centralizzato *lontano*
-> - manutenzione
+ E' un servizio che **traduce** i nomi degli host nei loro indirizzi IP usando un **Database distribuito**. E' *distribuito* perche':
+- unico punto di fallimento
+ - alto volume di traffico
+ - database centralizzato *lontano*
+ - manutenzione
 
 Altri servizi:
 1. **Host aliasing**
@@ -30,16 +30,16 @@ Il **DNS** è un database **distribuito e gerarchico** e ha tre classi:
 2. *TLD (top-level-domain) server* - .com, .org, .edu, ecc.
 3. *Server Autoritativi* - i server *DNS* propri di un'organizzazione che mappa i propri IP agli host name
 
-> Esiste anche il **DNS server locale**, quello fornito dagli *ISP*. E' detto anche *default name server*.
+ Esiste anche il **DNS server locale**, quello fornito dagli *ISP*. E' detto anche *default name server*.
 Quando un host fa una *DNS query* essa è mandata al *DNS server locale* che:
-> - ha una **cache** delle recenti "traduzioni" (ma può essere vecchia).
-> - fa da proxy e inoltra la query nella gerarchia.
+ - ha una **cache** delle recenti "traduzioni" (ma può essere vecchia).
+ - fa da proxy e inoltra la query nella gerarchia.
 
 **DNS Resolutions**:
 1. ***Iterativa*** - il server contattato risponde con il nome del server da contattare
 2. ***Ricorsiva*** - i server vengono contattati in modo ricorsivo. Tanto lavoro nei livelli alti della gerarchia
 
-####Resource Record (Record di risorsa)
+### Resource Record (Record di risorsa)
 Sono i record memorizzati nei database e hanno i seguenti campi:
 **($Name, Value, Type, TTL$)**
 
@@ -53,7 +53,7 @@ Viene spesso usato per verificare l'affidabilita' di una macchina (in quanto i m
 
 ---
 
-###File Distribution
+### File Distribution
 
 **Client-Server**:
 - $\frac{N \times F}{U_s}$ tempo di distribuzione in secondi (non si tiene conto della capacita' di download dei client):
