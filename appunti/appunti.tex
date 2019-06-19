@@ -1,8 +1,101 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
-\begin{document}
+\hypertarget{ftp-file-transfer-protocol}{%
+\subsubsection{FTP (File Transfer
+Protocol)}\label{ftp-file-transfer-protocol}}
 
-\section*{Notes for My Paper}
+\begin{itemize}
+\tightlist
+\item
+  Trasferimento file da/verso host remoto
+\item
+  Modello client/server
 
-\end{document}
+  \begin{itemize}
+  \tightlist
+  \item
+    Client: chi inizia la richiesta di trasferimento (da/verso host
+    remoto)
+  \item
+    Server: remote host
+  \end{itemize}
+\end{itemize}
+
+Utilizza \textbf{due connessioni TCP parallele}: 1. \textbf{Control
+connection}: invio di informazioni di controllo (username, password,
+comandi change directory, comandi trasferimento file). Invio
+informazioni in FTP \emph{out-of-band} (HTTP \emph{in-band},
+nell'header). 2. \textbf{Data connection}: usata per il vero e proprio
+invio dei file.
+
+\textbf{Control connection} è persistente, la \textbf{Data connection}
+si apre e si chiude ad ogni inizio e fine del trasferimento di un file.
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\textbf{DNS} (Domain Name System) E' un servizio che \textbf{traduce} i
+nomi degli host nei loro indirizzi IP usando un \textbf{Database
+distribuito}. E' \emph{distribuito} perche': - unico punto di fallimento
+- alto volume di traffico - database centralizzato \emph{lontano} -
+manutenzione
+
+Altri servizi: 1. \textbf{Host aliasing} 2. \textbf{Mail aliasing} 3.
+\textbf{Load distribution} - usato per distribuire il carico tra server
+replicati, nel caso di siti con tanto traffico per cui vengono usati
+molteplici server (quindi ognuno con il \textbf{proprio indirizzo IP}
+diverso da quello degli altri). Il Database DNS contiene tutti questi
+indirizzi IP.
+
+Il \textbf{DNS} è un database \textbf{distribuito e gerarchico} e ha tre
+classi: 1. \emph{Root Server} 2. \emph{TLD (top-level-domain) server} -
+.com, .org, .edu, ecc. 3. \emph{Server Autoritativi} - i server
+\emph{DNS} propri di un'organizzazione che mappa i propri IP agli host
+name
+
+Esiste anche il \textbf{DNS server locale}, quello fornito dagli
+\emph{ISP}. E' detto anche \emph{default name server}. Quando un host fa
+una \emph{DNS query} essa è mandata al \emph{DNS server locale} che: -
+ha una \textbf{cache} delle recenti ``traduzioni'' (ma può essere
+vecchia). - fa da proxy e inoltra la query nella gerarchia.
+
+\textbf{DNS Resolutions}: 1. \textbf{\emph{Iterativa}} - il server
+contattato risponde con il nome del server da contattare 2.
+\textbf{\emph{Ricorsiva}} - i server vengono contattati in modo
+ricorsivo. Tanto lavoro nei livelli alti della gerarchia
+
+\hypertarget{resource-record-record-di-risorsa}{%
+\subsubsection{Resource Record (Record di
+risorsa)}\label{resource-record-record-di-risorsa}}
+
+Sono i record memorizzati nei database e hanno i seguenti campi:
+\textbf{(\(Name, Value, Type, TTL\))}
+
+\begin{itemize}
+\tightlist
+\item
+  \(Type\) = \(A\) -\textgreater{} \textbf{Name} = hostname,
+  \textbf{Value} = IP dell'hostname. Es: (relay1.bar.foo.com,
+  145.37.93.126, A)
+\item
+  \(Type\) = \(NS\) -\textgreater{} \textbf{Name} = dominio,
+  \textbf{Value} = hostname del \textbf{DNS server autoritativo} che sa
+  come ottenere gli indirizzi IP dell'host del dominio. Es: (foo.com,
+  dns.foo.com, NS)
+\item
+  \(Type\) = \(CNAME\) -\textgreater{} Es: (foo.com, relay1.bar.foo.com,
+  CNAME)
+\item
+  \(Type\) = \(MX\) -\textgreater{} mail server. Es: (foo.com,
+  mail.bar.foo.com, MX)
+\end{itemize}
+
+\textbf{PTR Resource Record} - e' un record particolare che mi permette
+di ricevere l'\textbf{hostname} da un \textbf{indirizzo IP}. Questa
+operazione viene chiamata \emph{Reverse DNS}. Viene spesso usato per
+verificare l'affidabilita' di una macchina (in quanto i manager di rete
+assegnano domain name solo alle macchine di cui hanno fiducia).
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\hypertarget{file-distribution}{%
+\subsubsection{File Distribution}\label{file-distribution}}
+
+**Client-
