@@ -1,5 +1,12 @@
-###Distance Vector (DV) algorithm
+### Link-State algorithm
 
+Dijsktra
+
+- tutti i nodi conoscono i costi verso tutti gli altri
+- viene calcolato il percorso minore da un nodo agli altri (**tabella di inoltro per quel nodo**)
+- iterativo2
+
+### Distance Vector (DV) algorithm
 
 **Bellman-Ford** formula:
 
@@ -22,7 +29,7 @@ Ciascun nodo $x$ mantiene i seguenti dati di instradamento:
 
 ---
 
-###Scalable Routing
+### Scalable Routing
 
 Divisione in **Autonomous Systems** (**AS**) con algoritmi di:
 
@@ -43,12 +50,12 @@ La **scalabilità gerarchica** permette di salvare spazio grazie a tabelle più 
   - si appoggia su IP
   - supporta autenticazione
   - supporta **routing gerarchico** (consente di definire delle aree di routing e come esse siano connesse tra di loro):
-    - *area border routers*
-    - *backbone routers*
-    - *boundary routers*
+    - **area border routers** - sintetizzano le distanze nella propria area, fanno gli advertisement agli altri *area border routers*
+    - **backbone(spina dorsale) routers**
+    - **boundary routers** - si collegano agli altri *AS*
     - Gli stati dei link vengono distribuiti dettagliatamente all'interno di ciascuna area
     - OSPF distrbuisce informazione sintetica alle destinazioni che non appartengono alla stessa area. Quindi il grado di profondità dell'informazione di routing che viene distribuita dipende da dove mi trovo.
-  - supporta percorsi multipli verso la destinazione (bilanciamento del carico in caso di percorsi di egual costo)
+  - supporta percorsi multipli verso la destinazione (**bilanciamento** del carico in caso di percorsi di egual costo)
 - **IGRP** - Interior Gateway Routing Protocol
 
 **Inter-AS routing**:

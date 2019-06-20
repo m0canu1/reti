@@ -1,7 +1,7 @@
 
 #CAPITOLO 4
 
-###Funzioni fondamentali di un servizio di comunicazione di livello di rete:
+### Funzioni fondamentali di un servizio di comunicazione di livello di rete:
 
 1. **inoltro**
 2. **frammentazione** e **riassemblaggio**
@@ -110,14 +110,14 @@ L'indirizzo destinazione è uguale ad uno degli indirizzi  associati alla interf
 
 ---
 
-###DHCP (Dynamic Host Configuration Protocol)
+### DHCP (Dynamic Host Configuration Protocol)
 
 1. HOST   -> SERVER : DHCP discover (255.255.255.255 Broadcast Limitato)
 2. SERVER -> HOST   : DHCP offer
 3. HOST   -> SERVER : DHCP request
 4. SERVER -> HOST   : DHCP ACK
 ---
-###NAT (Network Address Translation)
+### NAT (Network Address Translation)
 I router abilitati al NAT appaiono al mondo esterno come unici dispositivi con un unico IP. Loro poi si occupano di indirizzare all'host giusto della propria sottorete i pacchetti giusti tramite la **NAT translation table**.
 **Problema**: Un client esterno vuole collegarsi ad un server che è in una sottorete di un router con NAT abilitato. L'indirizzo del server (per es. 10.10.10.1) è interno alla sottorete, ma l'unico indirizzo visibile è quello del router (es. 138.76.29.7).
 
@@ -133,7 +133,7 @@ Soluzioni:
      - CLIENT <-> **RELAY** <-> HOST
   ---
 
-###ICMP (Internet Control Message Protocol)
+### ICMP (Internet Control Message Protocol)
 
 Viene usato da **host** e **router** per scambiarsi informazioni a livello di rete (tipico uso: notifica degli errori).
 
@@ -147,3 +147,6 @@ Viene usato da **host** e **router** per scambiarsi informazioni a livello di re
 
 - ICMP è un meccanismo di segnalazione di errori: non  specifica l'azione da intraprendere a fronte degli errori e non  intraprende nessuna azione
 - ICMP riporta l'errore alla sorgente del datagramma, e quindi i router intermedi non ne vengono informati (e la strada a  ritorno potrebbe essere diversa da quella all'andata!). La  sorgente del datagramma a volte non è responsabile dell'errore (ad es. errore di routing) e non è in grado di correggerlo.
+
+**TRACEROUTE** 
+Il programma *Traceroute* usa TTL crescenti per scoprire i router sul cammino verso una destinazione

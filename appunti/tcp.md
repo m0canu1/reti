@@ -1,4 +1,4 @@
-###Protocollo TCP
+### Protocollo TCP
 
 - Comunicazione point-to-point: 
   - un mittente, un destinatario
@@ -36,5 +36,5 @@
 **RTO** (**Re-transmission Time-Out**) - Intervallo di tempo oltre il quale il mittente ritrasmette il segmento con il **più basso numero di sequenza** che non abbia ancora ricevuto *ACK*. Ogni volta che ciò accade, l'RTO raddoppia.
 Nel caso degli altri due eventi (dati ricevuti dal livello applicazine o ACK ricevuto) l'**RTO** viene stimato dai più recenti valori di **EstimatedRTT e DevRTT**.
 
-**GBN**
-**SR**
+**GBN** (Go-Back-N)
+**SR** (Selective Repeat)
